@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vos Offres de Voyage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Vos Offres de Voyage</h1>
+    </header>
+    <main>
+        <section id="offres">
+            <h2>Voici vos suggestions :</h2>
+            <!-- Des offres seront générées ici -->
+            <p>Basé sur votre budget de <span id="budget-value"></span> € et votre destination préférée : <span id="destination-value"></span>.</p>
+            <p>Dates de voyage : <span id="dates-value"></span>.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Voyages Sur Mesure</p>
+    </footer>
+    <script>
+        // Script pour afficher les valeurs passées depuis le formulaire
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById('budget-value').textContent = urlParams.get('budget');
+        document.getElementById('destination-value').textContent = urlParams.get('destination');
+        document.getElementById('dates-value').textContent = urlParams.get('dates');
+    </script>
+</body>
+</html>
